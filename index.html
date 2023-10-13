@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number guessing game</title>
+</head>
+
+<body>
+    <script>
+        
+        let random_number = Math.floor(Math.random() * 100 + 1)
+        console.log(random_number)
+        let arr_of_guess = []
+        let guessed_number = prompt("guess the number between 1 to 100");
+        arr_of_guess.push(guessed_number)
+
+        while (random_number != guessed_number) {
+            if (guessed_number < random_number) {
+                alert("random number is greater than the guessed number")
+                guessed_number = prompt("guess the number between 1 to 100")
+            }
+            if (guessed_number > random_number) {
+                alert("random number is less than the guessed number")
+                guessed_number = prompt("guess the number between 1 to 100")
+            }
+            if (guessed_number == random_number) {
+                alert("You guessed it right")
+            }
+            arr_of_guess.push(guessed_number)
+        }
+        console.log(arr_of_guess)
+        let no_of_guess = arr_of_guess.length
+        let marks = 100 - no_of_guess
+        alert("you got " + marks + " marks out off 100")
+    </script>
+</body>
+
+</html>
